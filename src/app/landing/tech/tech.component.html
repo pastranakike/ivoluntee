@@ -1,3 +1,4 @@
+<div class="tech-container">
 <div class="ui container content-container">
         <h2 class="ui center aligned icon header">
                 <i class="settings icon"></i>
@@ -5,5 +6,15 @@
                   Techonology
                 </div>
               </h2>
-    <p>Write about what we used to create the hackathon idea</p>
+              <div class="ui icon message" *ngFor="let item of items">
+                    <img class="ui avatar image" [src]='item.imageURL'>
+                    <div class="content">
+                      <div class="header">
+                        {{item.name}}
+
+                      </div>
+                      <p>{{item.description}}</p>
+                    </div>
+                  </div>
+    </div>
 </div>
