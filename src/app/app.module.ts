@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes} from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -13,8 +14,16 @@ import { ProfileComponent } from './profile/profile.component';
 import { EventCardComponent } from './components/event-card/event-card.component';
 import { DonationCardComponent } from './components/donation-card/donation-card.component';
 import { OrganizationCardComponent } from './components/organization-card/organization-card.component';
-import { NavBarComponent } from './components/navbar/navbar.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { LandingNavbarComponent } from './landing/landing-navbar/landing-navbar.component';
 
+const routes: Routes = [
+  { path: '', redirectTo: '/landing', pathMatch: 'full'},
+  { path: 'landing', component: LandingComponent},
+  { path: 'home', component: HomeComponent},
+  { path: 'profile', component: ProfileComponent},
+  { path: 'events/:id', component: EventsComponent }
+]
 
 @NgModule({
   declarations: [
@@ -29,10 +38,12 @@ import { NavBarComponent } from './components/navbar/navbar.component';
     EventCardComponent,
     DonationCardComponent,
     OrganizationCardComponent,
-    NavBarComponent
+    NavBarComponent,
+    LandingNavbarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
