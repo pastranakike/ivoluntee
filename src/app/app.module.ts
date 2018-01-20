@@ -17,21 +17,32 @@ import { OrganizationCardComponent } from './components/organization-card/organi
 import { NavBarComponent } from './components/navbar/navbar.component';
 import { LandingNavbarComponent } from './landing/landing-navbar/landing-navbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MainComponent } from './main/main.component';
 
 import { AuthGuardGuard } from './auth-guard.guard';
 import { AuthService } from './auth.service';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 const routes: Routes = [
-  { path: '', redirectTo: '/landing', pathMatch: 'full'},
-  { path: 'landing', component: LandingComponent},
+  { path: '', component: MainComponent},
   { path: 'about', component: AboutComponent},
   { path: 'tech', component: TechComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuardGuard]},
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardGuard]},
   { path: 'events/:id', component: EventsComponent, canActivate: [AuthGuardGuard] },
   { path: '**', component: PageNotFoundComponent }
 ];
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyDTBSJ0TYQvronrhwPZ7sQHrNLShZFgDQY',
+  authDomain: 'ivoluntee.firebaseapp.com',
+  databaseURL: 'https://ivoluntee.firebaseio.com',
+  projectId: 'ivoluntee',
+  storageBucket: '',
+  messagingSenderId: '868622001028'
+};
 
 @NgModule({
   declarations: [
@@ -48,11 +59,15 @@ const routes: Routes = [
     OrganizationCardComponent,
     NavBarComponent,
     LandingNavbarComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [AuthService, AuthGuardGuard],
   bootstrap: [AppComponent]

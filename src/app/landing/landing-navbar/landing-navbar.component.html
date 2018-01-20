@@ -1,6 +1,6 @@
 <div class="ui secondary menu" style="background-color:#FF9800">
   <div class="ui container">
-    <a routerLink="/landing" class="item" style="padding:0px">
+    <a routerLink="/" class="item" style="padding:0px">
       <img src="../../../assets/navbarlogowhitebig.png" alt="logo-white" class="ui item" height="36" style="padding:0px">
     </a>
     <a routerLink="/about" routerLinkActive="active" class="item">
@@ -9,11 +9,8 @@
     <a routerLink="/tech" routerLinkActive="active" class="item">
       Tech
     </a>
-    <a routerLink="/login" routerLinkActive="active" class="item">
-      Login
-    </a>
     <div class="right menu">
-      <a class="item">Item</a>
+      <a class="item" *ngIf="user" (click)="logout()">Logout</a>
     </div>
   </div>
 </div>

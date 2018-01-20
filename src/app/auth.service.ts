@@ -1,14 +1,38 @@
 import { Injectable } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthService {
+  private authState: Observable<firebase.User>;
+  private currentUser: firebase.User = null;
 
-  constructor() {
-    console.log('Created auth service');
+  constructor(public afAuth: AngularFireAuth) {
+      this.authState = this.afAuth.authState;
+      this.authState.subscribe(user => {
+        if (user) {
+          this.currentUser = user;
+        } else {
+          this.currentUser = null;
+        }
+      });
+    }
+  getAuthState() {
+    return this.authState;
   }
 
   public isLoggedIn(): boolean {
-    return true;
+    return this.currentUser != null;
+  }
+
+  public loginWithGoogle() {
+    return this.afAuth.auth.signInWithPopup(
+      new firebase.auth.GoogleAuthProvider());
+  }
+
+  public logout() {
+    return this.afAuth.auth.signOut();
   }
 
 }
