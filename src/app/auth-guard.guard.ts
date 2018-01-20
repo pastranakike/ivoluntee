@@ -10,7 +10,7 @@ export class AuthGuardGuard implements CanActivate {
   constructor(private auth: AuthService, private router: Router) {}
 
   canActivate( next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    var subject = new Subject<boolean>();
+    const subject = new Subject<boolean>();
     const logged = this.auth.isLoggedIn();
     let count = 0;
     let loggedIn = false;
