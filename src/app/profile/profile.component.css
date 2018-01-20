@@ -38,7 +38,7 @@
     width: 80%;
     background-color: #FFF3E0; 
     display: flex;
-    height: 100px;
+    min-height: 100px;
     border-radius: 7px;
     border: 2px solid #FFB74D;
     box-shadow: 0px 0px 2px #00000055; 
@@ -49,10 +49,32 @@
 
 .wall {
     flex: 2;
+    display: flex;
 }
 
 .ui.label {
     margin: 5px;
     box-shadow: 0px 0px 2px #00000055; 
+}
+
+.cards-container {
+    overflow-x: hidden;
+}
+
+.cards::-webkit-scrollbar {
+    height: 0px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.title-cards {
+    margin-top: 20px;
+    margin-bottom: 0px;
 }
 
