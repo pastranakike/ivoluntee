@@ -3,16 +3,31 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angul
 import { Observable } from 'rxjs/Observable';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class AuthGuardGuard implements CanActivate {
   constructor(private auth: AuthService, private router: Router) {}
 
   canActivate( next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+    var subject = new Subject<boolean>();
     const logged = this.auth.isLoggedIn();
-    if (!logged) {
-      this.router.navigate(['/']);
-    }
-    return logged;
+    let count = 0;
+    let loggedIn = false;
+    const interval = window.setInterval(() => {
+      if (this.auth.isLoggedIn()) {
+        loggedIn = true;
+        console.log(loggedIn);
+      }
+      count++;
+      if (count >= 4 || loggedIn) {
+          if (!loggedIn) {
+            this.router.navigate(['/']);
+          }
+          subject.next(loggedIn);
+          window.clearInterval(interval);
+      }
+    }, 200);
+    return subject.asObservable();
   }
 }
