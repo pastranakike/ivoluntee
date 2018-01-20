@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.ui.secondary.menu {
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    z-index: 10;
+}
+
+.ui.container.content-container {
+    padding-top: 56px;
+}

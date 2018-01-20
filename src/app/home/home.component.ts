@@ -7,7 +7,71 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  events: any[] = [];
+
+  constructor() {
+    for (let i = 0; i < 10; i++) {
+      this.events.push({
+        eventID: '5',
+        name: 'Hug puppies with the homeless',
+        description: 'Come to the street to hug puppies with the homeless. Free ice-cream for the homeless, not for you!',
+        tags: ['puppies', 'tag2'],
+        usersAttended: [{
+          name: 'Matias Szylkowski',
+          userID: '1'
+        },
+        {
+          name: 'Luis Pastrana',
+          userID: '2'
+        }],
+        usersInterested: [{
+          name: 'Matias Szylkowski',
+          userID: '1'
+        },
+        {
+          name: 'Luis Pastrana',
+          userID: '2'
+        }],
+        timestamp: new Date().getDate() + 1000000,
+        longitude: -31.543,
+        latitude: 56.574,
+        duration: 3600000,
+        imageURL: 'http://cdn1-www.dogtime.com/assets/uploads/2011/03/puppy-development-300x200.jpg',
+        creatorName: 'Matias Szylkowski',
+        creatorID: '1'
+      });
+      this.events.push({
+        eventID: '6',
+        name: 'Play soccer with handicapped',
+        description: 'We\'re looking for really bad soccer players that could play against gradnparents in wheelchairs. ' +
+        'Bring your own ball',
+        tags: ['puppies', 'tag2'],
+        usersAttended: [{
+          name: 'Matias Szylkowski',
+          userID: '1'
+        },
+        {
+          name: 'Luis Pastrana',
+          userID: '2'
+        }],
+        usersInterested: [{
+          name: 'Matias Szylkowski',
+          userID: '1'
+        },
+        {
+          name: 'Luis Pastrana',
+          userID: '2'
+        }],
+        timestamp: new Date().getDate() + 1000000,
+        longitude: -31.543,
+        latitude: 56.574,
+        duration: 3600000,
+        imageURL: 'http://www.haitianphotos.com/spa/_files/spa_album/pic_3604.jpg',
+        creatorName: 'Matias Szylkowski',
+        creatorID: '1'
+      });
+    }
+  }
 
   ngOnInit() {
   }

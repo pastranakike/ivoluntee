@@ -10,7 +10,7 @@
       Tech
     </a>
     <div class="right menu">
-      <div class="item" *ngIf="user">
+      <div class="item" *ngIf="user" style="padding-right:0px;margin-right:0px">
         <div class="ui icon input">
           <input type="text" placeholder="Search...">
           <i class="search link icon"></i>
@@ -22,7 +22,6 @@
           <div class="menu" style="margin-top:0px">
             <a class="item" href="/profile">Profile</a>
             <div class="item" (click)="logout()">Log out</div>
-            <div class="item">Scholarships</div>
           </div>
         </div>
       </div>

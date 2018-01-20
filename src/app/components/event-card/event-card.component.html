@@ -1,14 +1,14 @@
-<div class="ui card">
+<div class="ui card" style="margin-right:5px">
   <div class="image">
-    <img src="https://i.ytimg.com/vi/W3CzxRNrJMA/maxresdefault.jpg">
+    <img [src]="event.imageURL">
   </div>
   <div class="content">
-    <a class="header">Name of the Event</a>
+    <a class="header">{{event.name}}</a>
     <div class="meta">
-      <span class="date">Organizer</span>
+      <span class="date">{{event.creatorName}}</span>
     </div>
     <div class="description">
-      Description of the event
+      {{event.description}}
     </div>
   </div>
   <div class="extra content">
