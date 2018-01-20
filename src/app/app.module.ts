@@ -14,16 +14,18 @@ import { ProfileComponent } from './profile/profile.component';
 import { EventCardComponent } from './components/event-card/event-card.component';
 import { DonationCardComponent } from './components/donation-card/donation-card.component';
 import { OrganizationCardComponent } from './components/organization-card/organization-card.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { NavBarComponent } from './components/navbar/navbar.component';
 import { LandingNavbarComponent } from './landing/landing-navbar/landing-navbar.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full'},
   { path: 'landing', component: LandingComponent},
   { path: 'home', component: HomeComponent},
   { path: 'profile', component: ProfileComponent},
-  { path: 'events/:id', component: EventsComponent }
-]
+  { path: 'events/:id', component: EventsComponent },
+  { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ const routes: Routes = [
     DonationCardComponent,
     OrganizationCardComponent,
     NavBarComponent,
-    LandingNavbarComponent
+    LandingNavbarComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
