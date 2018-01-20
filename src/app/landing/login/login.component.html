@@ -1,8 +1,20 @@
 <div class="ui container">
     <h1>Login</h1>
     <p>Login buttons for all the social networks</p>
-    <button class="ui google plus button" (click)="loginWithGoogle()">
+    <button class="ui animated google plus button" (click)="loginWithGoogle()">
+        <div class ="visible content">Login with Google
         <i class="google icon"></i>
-        Login with Google
+        </div>
+        <div class="hidden content">
+        <i class="right arrow icon"></i>
+        </div>
+    </button>
+    <button class="ui animated facebook button">
+        <div class="visible content">Login with Facebook
+        <i class="facebook icon"></i>
+        </div>
+        <div class="hidden content">
+        <i class="right arrow icon"></i>
+        </div>
     </button>
 </div>
