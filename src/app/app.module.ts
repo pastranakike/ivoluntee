@@ -18,12 +18,18 @@ import { NavBarComponent } from './components/navbar/navbar.component';
 import { LandingNavbarComponent } from './landing/landing-navbar/landing-navbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+import { AuthGuardGuard } from './auth-guard.guard';
+import { AuthService } from './auth.service';
+
 const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full'},
   { path: 'landing', component: LandingComponent},
-  { path: 'home', component: HomeComponent},
-  { path: 'profile', component: ProfileComponent},
-  { path: 'events/:id', component: EventsComponent },
+  { path: 'about', component: AboutComponent},
+  { path: 'tech', component: TechComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuardGuard]},
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardGuard]},
+  { path: 'events/:id', component: EventsComponent, canActivate: [AuthGuardGuard] },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -48,7 +54,7 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [AuthService, AuthGuardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

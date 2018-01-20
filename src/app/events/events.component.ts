@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-events',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsComponent implements OnInit {
 
-  constructor() { }
+  id: string;
+
+  constructor(private route: ActivatedRoute) {
+    this.id = this.route.snapshot.params['id'];
+  }
 
   ngOnInit() {
   }
