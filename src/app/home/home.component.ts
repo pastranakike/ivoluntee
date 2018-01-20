@@ -10,12 +10,12 @@ export class HomeComponent implements OnInit {
   events: any[] = [];
 
   constructor() {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 3; i++) {
       this.events.push({
         eventID: '5',
         name: 'Hug puppies with the homeless',
         description: 'Come to the street to hug puppies with the homeless. Free ice-cream for the homeless, not for you!',
-        tags: ['puppies', 'tag2'],
+        tags: ['puppies', 'homeless'],
         usersAttended: [{
           name: 'Matias Szylkowski',
           userID: '1'
@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
           name: 'Luis Pastrana',
           userID: '2'
         }],
-        timestamp: new Date().getDate() + 1000000,
+        timestamp: new Date().getDate() + 1000000 * i,
         longitude: -31.543,
         latitude: 56.574,
         duration: 3600000,
@@ -44,8 +44,8 @@ export class HomeComponent implements OnInit {
         eventID: '6',
         name: 'Play soccer with handicapped',
         description: 'We\'re looking for really bad soccer players that could play against gradnparents in wheelchairs. ' +
-        'Bring your own ball',
-        tags: ['puppies', 'tag2'],
+        'Bring your own ball.',
+        tags: ['soccer', 'elderly'],
         usersAttended: [{
           name: 'Matias Szylkowski',
           userID: '1'
@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit {
           name: 'Luis Pastrana',
           userID: '2'
         }],
-        timestamp: new Date().getDate() + 1000000,
+        timestamp: new Date().getDate() + 1000000 * i,
         longitude: -31.543,
         latitude: 56.574,
         duration: 3600000,

@@ -3,12 +3,15 @@
     <img [src]="event.imageURL">
   </div>
   <div class="content">
-    <a class="header">{{event.name}}</a>
     <div class="meta">
       <span class="date">{{event.creatorName}}</span>
     </div>
+    <a class="header" [href]="'/events/'+event.eventID">{{event.name}}</a>
     <div class="description">
       {{event.description}}
+    </div>
+    <div style="float:right">
+      <span *ngFor="let tag of event.tags" class="ui label mini orange">{{tag}}</span>
     </div>
   </div>
   <div class="extra content">
