@@ -37,8 +37,9 @@ export class HomeComponent implements OnInit {
         latitude: 56.574,
         duration: 3600000,
         imageURL: 'http://cdn1-www.dogtime.com/assets/uploads/2011/03/puppy-development-300x200.jpg',
-        creatorName: 'Matias Szylkowski',
-        creatorID: '1'
+        creatorName: 'Luis Pastrana',
+        creatorID: '1',
+        volunteersNeeded: 10
       });
       this.events.push({
         eventID: '6',
@@ -63,12 +64,13 @@ export class HomeComponent implements OnInit {
           userID: '2'
         }],
         timestamp: new Date().getDate() + 1000000 * i,
-        longitude: -31.543,
-        latitude: 56.574,
-        duration: 3600000,
+        longitude: -35.543,
+        latitude: -40.574,
+        duration: 4800000,
         imageURL: 'http://www.haitianphotos.com/spa/_files/spa_album/pic_3604.jpg',
         creatorName: 'Matias Szylkowski',
-        creatorID: '1'
+        creatorID: '1',
+        volunteersNeeded: 20
       });
     }
   }

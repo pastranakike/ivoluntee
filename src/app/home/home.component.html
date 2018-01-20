@@ -1,10 +1,5 @@
 <div class="ui container content-container">
-  <div>
-    <h1 class="title-cards">Upcoming events</h1>
-    <div class="cards-container">
-      <div class="cards">
-        <app-event-card *ngFor="let event of events" [event]="event"></app-event-card>
-      </div>
-    </div>
-  </div>
+  <app-events-row [events]="events" title="Hand-picked for you"></app-events-row>
+  <app-events-row [events]="events" title="Upcoming events"></app-events-row>
+  <app-events-row [events]="events" title="Nearby"></app-events-row>
 </div>
