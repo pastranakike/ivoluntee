@@ -13,7 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { EventCardComponent } from './components/event-card/event-card.component';
 import { DonationCardComponent } from './components/donation-card/donation-card.component';
 import { OrganizationCardComponent } from './components/organization-card/organization-card.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { NavBarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
