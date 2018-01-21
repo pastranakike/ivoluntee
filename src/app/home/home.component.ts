@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   constructor(private auth: AuthService, private popup: PopupService) {
     for (let i = 0; i < 3; i++) {
       this.events.push({
-        eventID: '5',
+        eventID: '5a64713a8125dea2857be346',
         name: 'Hug puppies with the homeless',
         description: 'Come to the street to hug puppies with the homeless. Free ice-cream for the homeless, not for you!',
         tags: ['puppies', 'homeless'],
@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit {
         volunteersNeeded: 13
       });
       this.events.push({
-        eventID: '6',
+        eventID: '5a64703e8125de96d93258cd',
         name: 'Play soccer with handicapped',
         description: 'We\'re looking for really bad soccer players that could play against gradnparents in wheelchairs. ' +
         'Bring your own ball.',
