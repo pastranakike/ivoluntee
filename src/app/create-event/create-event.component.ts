@@ -9,8 +9,8 @@ import { HttpService } from '../http.service';
 })
 export class CreateEventComponent implements OnInit {
   show = false;
-  latitude = 29.6475473;
-  longitude = -82.3436095;
+  latitude = 31.6475473;
+  longitude = -76.3436095;
   time = '17:30';
   name = 'Name';
   tags = 'tag1, tag2';
@@ -44,7 +44,7 @@ export class CreateEventComponent implements OnInit {
       longitude: this.latitude,
       time: this.duration * 60000,
       name: this.name,
-      tags: this.tags === '' ? [] : this.tags.split(','),
+      tags: this.tags === '' ? [] : this.tags.replace(' ', '').split(','),
       timestamp: new Date(this.date + ' ' + this.time).getTime(),
       usersAttended: [],
       usersInterested: [],
