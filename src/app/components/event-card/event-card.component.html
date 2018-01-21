@@ -14,13 +14,20 @@
       <span *ngFor="let tag of event.tags" class="ui label mini orange">{{tag}}</span>
     </div>
   </div>
-  <div class="extra content" *ngIf="!small">
-      <div class="ui animated button" tabindex="0">
-          <div class="visible content">Attending</div>
-          <div class="hidden content">
-            <i class="right arrow icon"></i>
-          </div>
+  <div class="extra content" *ngIf="!small" style="height:58px;display:flex;flex-direction:row;align-items:center">
+      <div class="ui animated button blue" tabindex="0" (click)="updateInterest()" *ngIf="state=='nothing'">
+        <div class="visible content">Going?</div>
+        <div class="hidden content">
+          Yes!<i class="right arrow icon"></i>
         </div>
-        {{event.usersInterested.length+'/'+event.volunteersNeeded}}
+      </div>
+      <div class="ui animated button green" tabindex="0" (click)="updateCheckin()" *ngIf="state=='interested'">
+        <div class="visible content">Check in</div>
+        <div class="hidden content">
+          Here!<i class="check circle icon"></i>
+        </div>
+      </div>
+      {{event.usersInterested.length+'/'+event.volunteersNeeded}} said are going
+      <span *ngIf="state=='attended'">, and {{event.usersAttended.length}} came</span>
   </div>
 </div>

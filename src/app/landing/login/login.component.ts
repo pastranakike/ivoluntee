@@ -20,4 +20,10 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  loginWithFacebook() {
+    this.auth.loginWithFacebook().then((value) => {
+      this.router.navigate(['/']);
+    });
+  }
+
 }
