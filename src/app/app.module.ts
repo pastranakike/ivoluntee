@@ -26,6 +26,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { EventsRowComponent } from './events/events-row/events-row.component';
+import { OrganizationsRowComponent } from './organizations/organizations-row/organizations-row.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent},
@@ -62,7 +63,8 @@ const firebaseConfig = {
     LandingNavbarComponent,
     PageNotFoundComponent,
     MainComponent,
-    EventsRowComponent
+    EventsRowComponent,
+    OrganizationsRowComponent
   ],
   imports: [
     BrowserModule,

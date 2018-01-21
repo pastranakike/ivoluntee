@@ -31,6 +31,10 @@ export class HomeComponent implements OnInit {
         {
           name: 'Luis Pastrana',
           userID: '2'
+        },
+        {
+          name: 'Alen Polakof',
+          userID: '3'
         }],
         timestamp: new Date().getDate() + 1000000 * i,
         longitude: -31.543,
@@ -39,7 +43,7 @@ export class HomeComponent implements OnInit {
         imageURL: 'http://cdn1-www.dogtime.com/assets/uploads/2011/03/puppy-development-300x200.jpg',
         creatorName: 'Luis Pastrana',
         creatorID: '1',
-        volunteersNeeded: 10
+        volunteersNeeded: 13
       });
       this.events.push({
         eventID: '6',

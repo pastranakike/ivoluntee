@@ -15,9 +15,12 @@
     </div>
   </div>
   <div class="extra content">
-    <a>
-      <i class="user icon"></i>
-      Show how many people are needed/People signed for the event
-    </a>
+      <div class="ui animated button" tabindex="0">
+          <div class="visible content">Next</div>
+          <div class="hidden content">
+            <i class="right arrow icon"></i>
+          </div>
+        </div>
+        {{event.usersInterested.length+'/'+event.volunteersNeeded}}
   </div>
 </div>
