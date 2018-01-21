@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from './auth.service';
 import { HttpService } from './http.service';
 
@@ -8,17 +8,9 @@ import { HttpService } from './http.service';
   styleUrls: ['./app.component.css'],
   providers: [AuthService, HttpService]
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'app';
 
-  constructor(private http: HttpService) { }
-
-  ngOnInit() {
-    this.http.httpGet('api').subscribe((value) => {
-      console.log(value);
-    }, (error) => {
-      console.log(error);
-    });
-  }
+  constructor(private http: HttpService, private auth: AuthService) { }
 
 }
