@@ -1,4 +1,4 @@
-<div class="ui standard test modal transition visible active" style="margin-top: -216.453px; display: block !important;">
+<div class="ui standard test modal transition" style="margin-top: -216.453px; display: block !important;" [class.hidden]="!show">
     <div class="header">
       Create New Event
     </div>
@@ -10,10 +10,16 @@
       </div>
       <div class="description">
         <form class="ui form">
-            <div class="field">
+          <div class="fields">
+            <div class="twelve wide field">
               <label>Name of the Event</label>
-              <input type="text" name="first-name" placeholder="First Name">
+              <input type="text" name="name">
             </div>
+            <div class="four wide field">
+              <label>Duration</label>
+              <input type="number" name="time" placeholder="In minutes">
+            </div>
+          </div>
             <div class="field">
                 <label>Description of the Event</label>
                 <textarea></textarea>
@@ -21,20 +27,21 @@
             <div class="field">
             </div>
             <div class="more-info">
-              <div class="ui input">
-                <input type="text" style="flex:1; margin-right:2px; width:250px" placeholder="Add tags divided by comma.">
-                <input type="text" style="flex:2; width: 350px;" placeholder="Location Ex: Atlanta">
+              <div class="ui input" style="display:flex;flex-direction:row;width:100%">
+                <input type="text" style="flex:4; margin-right:5px" placeholder="Add tags divided by comma." name="tags">
+                <input type="date" style="flex:1; width: 200px; flex-shrink:0; margin-right:5px" name="date">
+                <input type="time" style="flex:1; width: 100px; flex-shrink:0" name="time">
               </div>
           </div>
           </form>
       </div>
     </div>
     <div class="actions">
-      <div class="ui black deny button">
-        Nope
+      <div class="ui black deny button" (click)="discard()">
+        Discard
       </div>
       <div class="ui positive right labeled icon button">
-        Yep, that's me
+        Create event
         <i class="checkmark icon"></i>
       </div>
     </div>

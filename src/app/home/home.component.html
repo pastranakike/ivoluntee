@@ -4,7 +4,7 @@
     <div class="dashboard-box">
       <div class="welcome">Welcome {{name}}</div>
       <div class="info-user">Today you have {{events.length}} events to help people.</div>
-      <button class="btn-event">Create New Event</button>
+      <button class="ui button" (click)="showPopup()" style="float:right;margin-top:5px">Create New Event</button>
     </div>
   </div>
   <app-events-row [events]="events" title="Hand-picked for you"></app-events-row>

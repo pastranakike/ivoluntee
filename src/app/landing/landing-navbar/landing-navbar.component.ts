@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth.service';
+import { PopupService } from '../../popup.service';
 
 @Component({
   selector: 'app-landing-navbar',
@@ -9,7 +10,7 @@ import { AuthService } from '../../auth.service';
 export class LandingNavbarComponent implements OnInit {
   private user = null;
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private popup: PopupService) { }
 
   ngOnInit() {
     this.auth.getAuthState().subscribe(
@@ -18,6 +19,10 @@ export class LandingNavbarComponent implements OnInit {
 
   logout() {
     this.auth.logout();
+  }
+
+  showPopup() {
+    this.popup.setPopupVisibility(true);
   }
 
 }

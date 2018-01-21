@@ -24,6 +24,7 @@ import { MainComponent } from './main/main.component';
 import { AuthGuardGuard } from './auth-guard.guard';
 import { AuthService } from './auth.service';
 import { HttpService } from './http.service';
+import { PopupService } from './popup.service';
 
 import { AgmCoreModule } from '@agm/core';
 import { AngularFireModule } from 'angularfire2';
@@ -83,7 +84,7 @@ const firebaseConfig = {
       apiKey: 'AIzaSyCyDKjZJs2m4Fb4OuvXDumoGNrWniUcJZ4'
     })
   ],
-  providers: [AuthService, AuthGuardGuard, HttpService],
+  providers: [AuthService, AuthGuardGuard, HttpService, PopupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

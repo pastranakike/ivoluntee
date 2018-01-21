@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { PopupService } from '../popup.service';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +11,9 @@ export class HomeComponent implements OnInit {
 
   events: any[] = [];
   orgs: any[] = [];
-  name: string = "";
+  name = '';
 
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService, private popup: PopupService) {
     for (let i = 0; i < 3; i++) {
       this.events.push({
         eventID: '5',
@@ -96,10 +97,14 @@ export class HomeComponent implements OnInit {
       (user) => {
         this.name = user.displayName;
       }
-    )
+    );
   }
 
   ngOnInit() {
+  }
+
+  showPopup() {
+    this.popup.setPopupVisibility(true);
   }
 
 }
