@@ -45,6 +45,24 @@ export class HomeComponent implements OnInit {
         imageURL: 'https://www.greenpeace.org.uk/wp-content/themes/greenpeaceuk/static/img/default-thumbnail.jpg',
         subscribers: 438221
       });
+      this.orgs.push({
+        name: 'Unicef',
+        description: 'The United Nations Children\'s Funds is a strong advocate for human rights, working to give hope' +
+        ' and good living standards to kids all over the world..',
+        type: 'Children NGO',
+        orgsID: '8',
+        imageURL: 'https://viquarsite.files.wordpress.com/2016/08/unicef.png',
+        subscribers: 785643
+      });
+      this.orgs.push({
+        name: 'CARE',
+        description: 'CARE is a major humanitarian agency which focuses on delivering help around the world through' +
+        ' delivering international projects and emergency help.',
+        type: 'Humanitarian NGO',
+        orgsID: '8',
+        imageURL: 'http://www.care.org/sites/all/themes/CARE/images/care-social-image.jpg',
+        subscribers: 268437
+      });
     }
     this.auth.getAuthState().subscribe(
       (user) => {
