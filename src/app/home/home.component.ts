@@ -11,14 +11,14 @@ export class HomeComponent implements OnInit {
 
   events: any[] = [];
   orgs: any[] = [];
-  quotes: string[] = ["../../../assets/MLKQuote.png",
-    "./../../assets/VOL1.png",
-    "./../../assets/VOL2.png",
-    "./../../assets/VOL3.png",
-    "./../../assets/VOL4.png",
-    "./../../assets/VOL5.png",
-    "./../../assets/VOL6.png",
-    "./../../assets/VOL7.png",
+  quotes: string[] = ['../../../assets/MLKQuote.png',
+    './../../assets/VOL1.png',
+    './../../assets/VOL2.png',
+    './../../assets/VOL3.png',
+    './../../assets/VOL4.png',
+    './../../assets/VOL5.png',
+    './../../assets/VOL6.png',
+    './../../assets/VOL7.png',
   ];
   name = '';
 
@@ -99,7 +99,8 @@ export class HomeComponent implements OnInit {
       });
       this.orgs.push({
         name: 'Green Peace',
-        description: 'Greenpeace will never stop fighting for a greener, healthier world for our oceans, forests, food, climate, and democracy.',
+        description: 'Greenpeace will never stop fighting for a greener, healthier world for our oceans,' +
+        ' forests, food, climate, and democracy.',
         type: 'Enviromental NGO',
         orgsID: '8',
         imageURL: 'https://www.greenpeace.org.uk/wp-content/themes/greenpeaceuk/static/img/default-thumbnail.jpg',
