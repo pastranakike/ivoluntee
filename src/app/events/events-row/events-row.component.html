@@ -2,7 +2,7 @@
   <h1 class="title-cards">{{title}}</h1>
   <div class="cards-container">
     <div class="cards">
-      <app-event-card *ngFor="let event of events" [event]="event"></app-event-card>
+      <app-event-card *ngFor="let event of events" [event]="event" [small]="small"></app-event-card>
     </div>
   </div>
 </div>

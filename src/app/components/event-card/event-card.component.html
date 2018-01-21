@@ -10,13 +10,13 @@
     <div class="description">
       {{event.description}}
     </div>
-    <div style="float:right">
+    <div style="float:right" *ngIf="!small">
       <span *ngFor="let tag of event.tags" class="ui label mini orange">{{tag}}</span>
     </div>
   </div>
-  <div class="extra content">
+  <div class="extra content" *ngIf="!small">
       <div class="ui animated button" tabindex="0">
-          <div class="visible content">Next</div>
+          <div class="visible content">Attending</div>
           <div class="hidden content">
             <i class="right arrow icon"></i>
           </div>

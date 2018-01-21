@@ -8,7 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class EventsRowComponent implements OnInit {
   @Input() events: any[];
   @Input() title: string;
-
+  @Input() small: boolean = false;
+  
   constructor() { }
 
   ngOnInit() {

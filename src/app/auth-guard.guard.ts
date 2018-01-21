@@ -17,7 +17,6 @@ export class AuthGuardGuard implements CanActivate {
     const interval = window.setInterval(() => {
       if (this.auth.isLoggedIn()) {
         loggedIn = true;
-        console.log(loggedIn);
       }
       count++;
       if (count >= 4 || loggedIn) {
