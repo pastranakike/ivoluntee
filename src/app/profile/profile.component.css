@@ -2,15 +2,17 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    overflow-x: hidden;
     height: 100vh;
 }
 
 .profile {
     background-color: #ffcc80;
-    max-width: 50%;
-    min-width: 100px;
+    max-width: 500px;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
     height: 100%;
@@ -19,6 +21,7 @@
     position: -webkit-sticky;  
     position: sticky;
     top: 0;
+    padding: 20px;
 }
 
 .border-profile {
@@ -50,6 +53,8 @@
 .wall {
     flex: 2;
     display: flex;
+    padding: 56px 10px 10px 10px;
+    overflow-x: hidden;
 }
 
 .ui.label {
@@ -57,24 +62,4 @@
     box-shadow: 0px 0px 2px #00000055; 
 }
 
-.cards-container {
-    overflow-x: hidden;
-}
-
-.cards::-webkit-scrollbar {
-    height: 0px;
-}
-
-.cards {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    padding: 5px;
-    background-color: rgb(255, 255, 255);
-}
-
-.title-cards {
-    margin-top: 20px;
-    margin-bottom: 0px;
-}
 
