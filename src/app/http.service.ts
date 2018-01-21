@@ -109,10 +109,23 @@ export class HttpService {
   }
 
   createEvent(event) {
-    console.log(event);
     event.creatorID = this.userID;
     event.creatorName = this.userName;
-    return this.httpPost('events/create_event', event);
+    return this.httpPost('events/create_event/', event);
+  }
+
+  getFeed() {
+    const body = {
+      userID: this.userID
+    };
+    return this.httpPost('users/feed/', body);
+  }
+
+  getProfile() {
+    const body = {
+      userID: this.userID
+    };
+    return this.httpPost('users/profile/', body);
   }
 
 }

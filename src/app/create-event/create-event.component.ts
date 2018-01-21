@@ -12,11 +12,12 @@ export class CreateEventComponent implements OnInit {
   latitude = 29.6475473;
   longitude = -82.3436095;
   time = '17:30';
-  name = '';
-  tags = '';
-  date = '01-21-2018';
+  name = 'Name';
+  tags = 'tag1, tag2';
+  date = '2018-25-01';
   duration = 60;
-  description = '';
+  description = 'Description';
+  imageURL: '';
 
   constructor(private popup: PopupService, private http: HttpService) { }
 
@@ -31,9 +32,10 @@ export class CreateEventComponent implements OnInit {
     this.time = '17:30';
     this.name = '';
     this.tags = '';
-    this.date = '01-21-2018';
+    this.date = '2018-25-01';
     this.duration = 60;
     this.description = '';
+    this.imageURL = '';
   }
 
   sendEvent() {
@@ -46,10 +48,10 @@ export class CreateEventComponent implements OnInit {
       timestamp: new Date(this.date + ' ' + this.time).getTime(),
       usersAttended: [],
       usersInterested: [],
-      description: this.description
+      description: this.description,
+      imageURL: this.imageURL
     };
 
-    console.log(this.time);
     this.http.createEvent(event).subscribe((value) => {
       console.log(value);
       this.discard();
