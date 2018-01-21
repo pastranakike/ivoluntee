@@ -36,7 +36,7 @@ export class HttpService {
       score: 0,
       tags: ['puppies', 'elderly', 'food']
     };
-    return this.httpPost('create_user', body).subscribe(
+    return this.httpPost('users/create_user', body).subscribe(
       (value) => {console.log(value); }
     );
   }
