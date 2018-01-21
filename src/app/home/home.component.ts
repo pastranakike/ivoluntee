@@ -82,12 +82,16 @@ export class HomeComponent implements OnInit {
       });
       this.orgs.push({
         name: 'ForTheKids',
+        description: 'An Atlanta based foundation with the only purpose of guarantee a better future for the future of our nation',
+        type: 'Child Support',
         orgsID: '7',
         imageURL: 'https://images-na.ssl-images-amazon.com/images/I/61cVLQVvG9L.jpg',
         subscribers: 10004
       });
       this.orgs.push({
         name: 'Green Peace',
+        description: 'Greenpeace will never stop fighting for a greener, healthier world for our oceans, forests, food, climate, and democracy.',
+        type: 'Enviromental NGO',
         orgsID: '8',
         imageURL: 'https://www.greenpeace.org.uk/wp-content/themes/greenpeaceuk/static/img/default-thumbnail.jpg',
         subscribers: 438221
