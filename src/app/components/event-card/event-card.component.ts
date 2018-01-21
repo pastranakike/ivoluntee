@@ -16,17 +16,24 @@ export class EventCardComponent implements OnInit {
   constructor(private http: HttpService, private auth: AuthService) { }
 
   ngOnInit() {
+    if (this.event.usersAttended.indexOf(this.auth.getUser().uid) >= 0) {
+      this.state = 'attended';
+    } else if (this.event.usersInterested.indexOf(this.auth.getUser().uid) >= 0) {
+      this.state = 'interested';
+    } else {
+      this.state = 'nothing';
+    }
   }
 
   updateInterest() {
-    this.http.updateInterested(this.event.eventID);
+    this.http.updateInterested(this.event._id);
     this.state = 'interested';
     const user = this.auth.getUser();
     this.event.usersInterested.push({userID: user.uid, userName: user.displayName});
   }
 
   updateCheckin() {
-    this.http.updateCheckIn(this.event.eventID);
+    this.http.updateCheckIn(this.event._id);
     this.state = 'attended';
     const user = this.auth.getUser();
     this.event.usersAttended.push({userID: user.uid, userName: user.displayName});

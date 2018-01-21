@@ -33,8 +33,9 @@
                 <input type="time" style="flex:1; width: 100px; flex-shrink:0" name="time" [(ngModel)]="time">
               </div>
           </div>
-          <div class="field" style="margin-top:10px">
-              <input type="text" name="imageURL" [(ngModel)]="imageURL" placeholder="Image URL">
+          <div class="fields" style="margin-top:5px">
+              <input class="twelve wide field" type="text" name="imageURL" [(ngModel)]="imageURL" placeholder="Image URL" style="margin-right:5px">
+              <input class="four wide field" type="number" name="volunteersNeeded" [(ngModel)]="volunteersNeeded" placeholder="Volunteers needed">
             </div>
           </form>
       </div>

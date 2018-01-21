@@ -18,6 +18,7 @@ export class CreateEventComponent implements OnInit {
   duration = 60;
   description = 'Description';
   imageURL: '';
+  volunteersNeeded: number;
 
   constructor(private popup: PopupService, private http: HttpService) { }
 
@@ -49,7 +50,8 @@ export class CreateEventComponent implements OnInit {
       usersAttended: [],
       usersInterested: [],
       description: this.description,
-      imageURL: this.imageURL
+      imageURL: this.imageURL,
+      volunteersNeeded: this.volunteersNeeded
     };
 
     this.http.createEvent(event).subscribe((value) => {

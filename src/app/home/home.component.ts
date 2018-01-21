@@ -48,7 +48,12 @@ export class HomeComponent implements OnInit {
     }
     this.auth.getAuthState().subscribe(
       (user) => {
+        if (!user) {
+          this.name = '';
+          return;
+        }
         this.name = user.displayName;
+        this.updateInfo();
       }
     );
   }
@@ -59,7 +64,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.currPic = this.giveMePics();
-    this.updateInfo();
   }
 
   updateInfo() {
