@@ -116,9 +116,12 @@ export class HttpService {
 
   getFeed() {
     const body = {
-      userID: this.userID
+      userID: this.userID,
+      timestamp: new Date().getTime(),
+      latitude: 29.651634,
+      longitude: -82.324826
     };
-    return this.httpPost('users/feed/', body);
+    return this.httpPost('events/feed/', body);
   }
 
   getProfile() {

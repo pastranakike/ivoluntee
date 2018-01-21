@@ -28,11 +28,11 @@
       </div>
   </div>
   <div class="wall">
-      <app-events-row [events]="events" [title]="'MY EVENTS'" [small]="true" class="text-align" style="flex: 1; flex-shrink:0"></app-events-row>
+      <app-events-row [events]="eventsInterested" [title]="'MY EVENTS'" [small]="true" class="text-align" style="flex: 1; flex-shrink:0"></app-events-row>
       <div class="past-event-container">
         <h1 class="text-style">PAST EVENTS</h1>
         <div class="event-container">
-          <div class="ui floating message" *ngFor="let event of events">
+          <div class="ui floating message" *ngFor="let event of pastEvents">
               <div class="content">
                   <div class="header">
                     <p>{{event.name}}</p>

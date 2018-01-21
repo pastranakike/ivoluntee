@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { PopupService } from '../popup.service';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,9 @@ import { PopupService } from '../popup.service';
 })
 export class HomeComponent implements OnInit {
 
-  events: any[] = [];
+  handPicked: any[] = [];
+  upcoming = [];
+  nearby = [];
   orgs: any[] = [];
   quotes: string[] = ['../../../assets/MLKQuote.png',
     './../../assets/VOL1.png',
@@ -23,73 +26,8 @@ export class HomeComponent implements OnInit {
   currPic = '';
   name = '';
 
-  constructor(private auth: AuthService, private popup: PopupService) {
+  constructor(private auth: AuthService, private popup: PopupService, private http: HttpService) {
     for (let i = 0; i < 3; i++) {
-      this.events.push({
-        eventID: '5a64713a8125dea2857be346',
-        name: 'Hug puppies with the homeless',
-        description: 'Come to the street to hug puppies with the homeless. Free ice-cream for the homeless, not for you!',
-        tags: ['puppies', 'homeless'],
-        usersAttended: [{
-          name: 'Matias Szylkowski',
-          userID: '1'
-        },
-        {
-          name: 'Luis Pastrana',
-          userID: '2'
-        }],
-        usersInterested: [{
-          name: 'Matias Szylkowski',
-          userID: '1'
-        },
-        {
-          name: 'Luis Pastrana',
-          userID: '2'
-        },
-        {
-          name: 'Alen Polakof',
-          userID: '3'
-        }],
-        timestamp: new Date().getDate() + 1000000 * i,
-        longitude: -31.543,
-        latitude: 56.574,
-        duration: 3600000,
-        imageURL: 'http://cdn1-www.dogtime.com/assets/uploads/2011/03/puppy-development-300x200.jpg',
-        creatorName: 'Luis Pastrana',
-        creatorID: '1',
-        volunteersNeeded: 13
-      });
-      this.events.push({
-        eventID: '5a64703e8125de96d93258cd',
-        name: 'Play soccer with handicapped',
-        description: 'We\'re looking for really bad soccer players that could play against gradnparents in wheelchairs. ' +
-        'Bring your own ball.',
-        tags: ['soccer', 'elderly'],
-        usersAttended: [{
-          name: 'Matias Szylkowski',
-          userID: '1'
-        },
-        {
-          name: 'Luis Pastrana',
-          userID: '2'
-        }],
-        usersInterested: [{
-          name: 'Matias Szylkowski',
-          userID: '1'
-        },
-        {
-          name: 'Luis Pastrana',
-          userID: '2'
-        }],
-        timestamp: new Date().getDate() + 1000000 * i,
-        longitude: -35.543,
-        latitude: -40.574,
-        duration: 4800000,
-        imageURL: 'http://www.haitianphotos.com/spa/_files/spa_album/pic_3604.jpg',
-        creatorName: 'Matias Szylkowski',
-        creatorID: '1',
-        volunteersNeeded: 20
-      });
       this.orgs.push({
         name: 'ForTheKids',
         description: 'An Atlanta based foundation with the only purpose of guarantee a better future for the future of our nation',
@@ -121,6 +59,22 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.currPic = this.giveMePics();
+    this.updateInfo();
+  }
+
+  updateInfo() {
+    this.http.getFeed().subscribe((value) => {
+      console.log(value);
+      for (const event of value['events-handpicked']) {
+        this.handPicked.push(JSON.parse(event));
+      }
+      for (const event of value['events-upcoming']) {
+        this.upcoming.push(JSON.parse(event));
+      }
+      for (const event of value['events-nearby']) {
+        this.nearby.push(JSON.parse(event));
+      }
+    });
   }
 
   showPopup() {

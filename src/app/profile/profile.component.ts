@@ -12,6 +12,8 @@ export class ProfileComponent implements OnInit {
   events: any[] = [];
   profilePic = '';
   name = '';
+  pastEvents = [];
+  eventsInterested = [];
 
   constructor(private auth: AuthService, private http: HttpService) {
     for (let i = 0; i < 10; i++) {
@@ -86,8 +88,19 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.updateInfo();
+  }
+
+  updateInfo() {
     this.http.getProfile().subscribe((value) => {
       console.log(value);
+      this.tags = value.tags;
+      for (const event of value['events-assisted']) {
+        this.pastEvents.push(JSON.parse(event));
+      }
+      for (const event of value['events-interested']) {
+        this.eventsInterested.push(JSON.parse(event));
+      }
     });
   }
 }
