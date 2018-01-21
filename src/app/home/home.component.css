@@ -42,4 +42,19 @@
     margin: 2px;
 }
 
+.button-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cover {
+    background: #000000a2;
+    z-index: 5;
+    width: 100vh;
+}
+
+
+
+
 
