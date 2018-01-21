@@ -11,6 +11,15 @@ export class HomeComponent implements OnInit {
 
   events: any[] = [];
   orgs: any[] = [];
+  quotes: string[] = ["../../../assets/MLKQuote.png",
+    "./../../assets/VOL1.png",
+    "./../../assets/VOL2.png",
+    "./../../assets/VOL3.png",
+    "./../../assets/VOL4.png",
+    "./../../assets/VOL5.png",
+    "./../../assets/VOL6.png",
+    "./../../assets/VOL7.png",
+  ];
   name = '';
 
   constructor(private auth: AuthService, private popup: PopupService) {
