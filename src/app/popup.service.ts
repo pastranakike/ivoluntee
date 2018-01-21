@@ -15,7 +15,7 @@ export class PopupService {
   }
 
   setPopupVisibility(visible: boolean) {
-    this.createEventSubject.next({visible: visible});
+    this.createEventSubject.next(visible);
   }
 
 }

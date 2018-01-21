@@ -108,4 +108,8 @@ export class HttpService {
     );
   }
 
+  createEvent(event) {
+    console.log(event);
+  }
+
 }
