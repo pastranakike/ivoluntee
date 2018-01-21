@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
     './../../assets/VOL6.png',
     './../../assets/VOL7.png',
   ];
+  currPic = "";
   name = '';
 
   constructor(private auth: AuthService, private popup: PopupService) {
@@ -114,7 +115,12 @@ export class HomeComponent implements OnInit {
     );
   }
 
+  public giveMePics(): string {
+    return this.quotes[Math.floor(Math.random()*7)];
+  }
+
   ngOnInit() {
+    this.currPic = this.giveMePics();
   }
 
   showPopup() {

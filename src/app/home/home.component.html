@@ -1,6 +1,6 @@
 <div class="ui container content-container" style="padding-bottom:20px">
   <div class="ui visible message position-home">
-    <div class="quote-box"><img [src]="quotes.findIndex(Math.floor(Math.random() * 6) + 0)"></div>
+    <div class="quote-box"><img [src]='currPic'></div>
     <div class="dashboard-box">
       <div class="welcome">Welcome {{name}}</div>
       <div class="info-user">Today you have {{events.length}} events to help people.</div>
