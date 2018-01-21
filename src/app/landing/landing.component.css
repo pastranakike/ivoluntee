@@ -1,0 +1,21 @@
+.image1 {
+    position: absolute;
+    left: -50px;
+    top: 300px;
+    z-index: -1;
+}
+
+.image2 {
+    position: absolute;
+    left: 1000px;
+    top: 300px;
+    z-index: -1;
+}
+
+h1 {
+    text-align: center;
+    letter-spacing: 5px;
+    size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
