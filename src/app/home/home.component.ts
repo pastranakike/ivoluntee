@@ -89,7 +89,7 @@ export class HomeComponent implements OnInit {
       this.orgs.push({
         name: 'Green Peace',
         orgsID: '8',
-        imageURL: 'https://trabajarporelmundo.org/wp-content/uploads/2014/01/trabajar-en-greenpeace-o-realizar-un-voluntariado.jpg',
+        imageURL: 'https://www.greenpeace.org.uk/wp-content/themes/greenpeaceuk/static/img/default-thumbnail.jpg',
         subscribers: 438221
       });
     }

@@ -1,3 +1,21 @@
-.ui.card {
-    margin-right: 5px;
+.kike-card {
+    background: transparent;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+.ui.medium.circular.image {
+    flex: 2;
+    border-radius: 300rem !important;
+    width: 70%;
+
+}
+
+.content {
+    flex: 1;
+    align-content: center;
+}
+
+.ui.card.transparent {
+    background: transparent !important; 
 }
