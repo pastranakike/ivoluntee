@@ -4,13 +4,30 @@
     background: url("https://pre00.deviantart.net/166f/th/pre/f/2008/287/8/9/black_texture___ray_by_ethenyl.jpg");
     object-fit: cover;
     background-attachment: fixed;  
+    display: flex !important;
+    flex-direction: row;
 }
 
-.quote {
-    align-content: flex-start;
-    padding: 10px;
+.quote-box {
+    flex: 1;
 }
 
-.author-name {
-    text-align: right
+.dashboard-box {
+    flex: 2;
 }
+
+.welcome {
+    color: rgba(201, 201, 201, 0.849);
+    text-align: right;
+    font-size: 23px;
+    padding: 5px;
+}
+
+.info-user {
+    text-align: right;
+    color: rgba(201, 201, 201, 0.849);
+    font-size: 12px;
+    margin: 2px;
+}
+
+

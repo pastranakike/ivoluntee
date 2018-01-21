@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +10,9 @@ export class HomeComponent implements OnInit {
 
   events: any[] = [];
   orgs: any[] = [];
+  name: string = "";
 
-  constructor() {
+  constructor(private auth: AuthService) {
     for (let i = 0; i < 3; i++) {
       this.events.push({
         eventID: '5',
@@ -90,6 +92,11 @@ export class HomeComponent implements OnInit {
         subscribers: 438221
       });
     }
+    this.auth.getAuthState().subscribe(
+      (user) => {
+        this.name = user.displayName;
+      }
+    )
   }
 
   ngOnInit() {

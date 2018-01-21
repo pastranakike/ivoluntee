@@ -4,6 +4,7 @@ import { RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 
 
+
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { AboutComponent } from './landing/about/about.component';
@@ -24,11 +25,13 @@ import { AuthGuardGuard } from './auth-guard.guard';
 import { AuthService } from './auth.service';
 import { HttpService } from './http.service';
 
+import { AgmCoreModule } from '@agm/core';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { EventsRowComponent } from './events/events-row/events-row.component';
 import { OrganizationsRowComponent } from './organizations/organizations-row/organizations-row.component';
+import { CreateEventComponent } from './create-event/create-event.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent},
@@ -66,7 +69,8 @@ const firebaseConfig = {
     PageNotFoundComponent,
     MainComponent,
     EventsRowComponent,
-    OrganizationsRowComponent
+    OrganizationsRowComponent,
+    CreateEventComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +78,10 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCyDKjZJs2m4Fb4OuvXDumoGNrWniUcJZ4'
+    })
   ],
   providers: [AuthService, AuthGuardGuard, HttpService],
   bootstrap: [AppComponent]

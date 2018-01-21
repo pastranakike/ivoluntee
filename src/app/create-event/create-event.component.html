@@ -1,0 +1,41 @@
+<div class="ui standard test modal transition visible active" style="margin-top: -216.453px; display: block !important;">
+    <div class="header">
+      Create New Event
+    </div>
+    <div class="image content">
+      <div class="ui medium image">
+          <agm-map [latitude]="lat" [longitude]="lng">
+              <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+      </div>
+      <div class="description">
+        <form class="ui form">
+            <div class="field">
+              <label>Name of the Event</label>
+              <input type="text" name="first-name" placeholder="First Name">
+            </div>
+            <div class="field">
+                <label>Description of the Event</label>
+                <textarea></textarea>
+              </div>
+            <div class="field">
+            </div>
+            <div class="more-info">
+              <div class="ui input">
+                <input type="text" style="flex:1; margin-right:2px; width:250px" placeholder="Add tags divided by comma.">
+                <input type="text" style="flex:2; width: 350px;" placeholder="Location Ex: Atlanta">
+              </div>
+          </div>
+          </form>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="ui black deny button">
+        Nope
+      </div>
+      <div class="ui positive right labeled icon button">
+        Yep, that's me
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
