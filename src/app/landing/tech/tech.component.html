@@ -13,7 +13,7 @@
                         {{item.name}}
 
                       </div>
-                      <p>{{item.description}}</p>
+                      <p>{{item.description}}<a *ngIf="item.link" [href]="item.link">{{item.link}}</a></p>
                     </div>
                   </div>
     </div>
