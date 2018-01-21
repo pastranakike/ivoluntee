@@ -1,0 +1,12 @@
+.ui.visible.message.position-home {
+    padding: 10px;
+    margin: 20px 5px 0px 5px;
+}
+
+.quote {
+    text-align: left;
+}
+
+.author-name {
+    text-align: right
+}

@@ -10,6 +10,7 @@ export class ProfileComponent implements OnInit {
   tags: any[] = ['Fundraising', 'Pets', 'Soccer', 'Science', 'Helping People', 'Hospital', 'Wine', 'FTK', 'Philantropy'];
   events: any[] = [];
   profilePic: string = '';
+  name: string = "";
 
   constructor(private auth: AuthService) {
     for (let i = 0; i < 10; i++) {
@@ -78,6 +79,7 @@ export class ProfileComponent implements OnInit {
     this.auth.getAuthState().subscribe(
       (user) => {
         this.profilePic = user.photoURL;
+        this.name = user.displayName;
       }
     )
   }

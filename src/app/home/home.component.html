@@ -1,11 +1,8 @@
 <div class="ui container content-container" style="padding-bottom:20px">
-  <div class="ui message transition hidden">
-      <i class="close icon"></i>
-      <div class="header">
-        Welcome back!
-      </div>
-      <p>This is a special notification which you can dismiss if you're bored with it.</p>
-    </div>
+  <div class="ui visible message position-home">
+    <p class="quote">Life’s most persistent and urgent question is: What are you doing for others?</p>
+    <p class="author-name">- Martin Luther King</p>
+  </div>
   <app-events-row [events]="events" title="Hand-picked for you"></app-events-row>
   <app-organizations-row [orgs]="orgs" title="Featured organizations"></app-organizations-row>
   <app-events-row [events]="events" title="Upcoming events" [small]="true"></app-events-row>
