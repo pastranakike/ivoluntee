@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-organizations-row',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./organizations-row.component.css']
 })
 export class OrganizationsRowComponent implements OnInit {
+  @Input() orgs: any[];
+  @Input() title: any;
 
   constructor() { }
 

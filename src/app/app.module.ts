@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { MainComponent } from './main/main.component';
 
 import { AuthGuardGuard } from './auth-guard.guard';
 import { AuthService } from './auth.service';
+import { HttpService } from './http.service';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -71,9 +73,10 @@ const firebaseConfig = {
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule
   ],
-  providers: [AuthService, AuthGuardGuard],
+  providers: [AuthService, AuthGuardGuard, HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

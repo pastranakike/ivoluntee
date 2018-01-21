@@ -1,9 +1,9 @@
 <div class="ui card">
   <div class="image">
-    <img src="https://i.ytimg.com/vi/W3CzxRNrJMA/maxresdefault.jpg">
+    <img [src]="org.imageURL">
   </div>
   <div class="content">
-    <a class="header">Name of the Organization</a>
+    <a class="header">{{org.name}}</a>
     <div class="meta">
       <span class="date">Type of organization</span>
     </div>
@@ -14,7 +14,7 @@
   <div class="extra content">
     <a>
       <i class="user icon"></i>
-      Number of Subscribers
+      {{org.subscribers}}
     </a>
   </div>
 </div>

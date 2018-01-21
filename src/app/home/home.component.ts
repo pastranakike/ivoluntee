@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   events: any[] = [];
+  orgs: any[] = [];
 
   constructor() {
     for (let i = 0; i < 3; i++) {
@@ -75,6 +76,18 @@ export class HomeComponent implements OnInit {
         creatorName: 'Matias Szylkowski',
         creatorID: '1',
         volunteersNeeded: 20
+      });
+      this.orgs.push({
+        name: 'ForTheKids',
+        orgsID: '7',
+        imageURL: 'https://images-na.ssl-images-amazon.com/images/I/61cVLQVvG9L.jpg',
+        subscribers: 10004
+      });
+      this.orgs.push({
+        name: 'Green Peace',
+        orgsID: '8',
+        imageURL: 'https://trabajarporelmundo.org/wp-content/uploads/2014/01/trabajar-en-greenpeace-o-realizar-un-voluntariado.jpg',
+        subscribers: 438221
       });
     }
   }
