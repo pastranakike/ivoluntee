@@ -10,7 +10,7 @@ export class ProfileComponent implements OnInit {
   events: any[] = [];
 
   constructor() {
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 10; i++) {
       this.events.push({
         eventID: '5',
         name: 'Hug puppies with the homeless',

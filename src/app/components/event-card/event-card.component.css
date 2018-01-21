@@ -5,3 +5,20 @@
 .ui.card {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+.ui.card.small-card {
+    width: 260px;
+}
+
+.description {
+    height: 80px;
+    overflow-y: auto;
+}
+
+.small-image {
+    height: 100px !important;
+    object-fit: cover;
+}
+
+
+

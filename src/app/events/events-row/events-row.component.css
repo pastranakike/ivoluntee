@@ -19,4 +19,10 @@
 .title-cards {
     margin-top: 20px;
     margin-bottom: 0px;
+    color: #FF9800;
+    text-transform: uppercase;
+}
+
+.title-cards.title-change {
+    margin-top: 10px; 
 }

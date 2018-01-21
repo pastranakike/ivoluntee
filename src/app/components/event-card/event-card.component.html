@@ -1,6 +1,6 @@
-<div class="ui card" style="margin-right:10px">
+<div class="ui card" style="margin-right:10px" [class.small-card]="small">
   <div class="image">
-    <img [src]="event.imageURL">
+    <img [src]="event.imageURL" [class.small-image]="small">
   </div>
   <div class="content">
     <div class="meta">

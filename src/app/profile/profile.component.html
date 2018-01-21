@@ -28,8 +28,18 @@
       </div>
   </div>
   <div class="wall">
-    <div style="overflow-x: auto">
-      <app-events-row [events]="events" [title]=null [small]="true"></app-events-row>
+      <app-events-row [events]="events" [title]="'MY EVENTS'" [small]="true" class="text-align" style="flex: 1; flex-shrink:0"></app-events-row>
+      <div class="past-event-container">
+        <h1 class="text-style">PAST EVENTS</h1>
+        <div class="event-container">
+          <div class="ui floating message" *ngFor="let event of events">
+              <div class="content">
+                  <div class="header">
+                    <p>{{event.name}}</p>
+                  </div>
+                  <p>{{event.description}}</p>
+          </div>
+        </div>
     </div>
   </div>
 </div>
