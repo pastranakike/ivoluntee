@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -8,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
   tags: any[] = ['Fundraising', 'Pets', 'Soccer', 'Science', 'Helping People', 'Hospital', 'Wine', 'FTK', 'Philantropy'];
   events: any[] = [];
+  profilePic: string = '';
 
-  constructor() {
+  constructor(private auth: AuthService) {
     for (let i = 0; i < 10; i++) {
       this.events.push({
         eventID: '5',
@@ -73,6 +75,11 @@ export class ProfileComponent implements OnInit {
         volunteersNeeded: 20
       });
     }
+    this.auth.getAuthState().subscribe(
+      (user) => {
+        this.profilePic = user.photoURL;
+      }
+    )
   }
 
   ngOnInit() {
