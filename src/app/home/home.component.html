@@ -7,14 +7,10 @@
           <div class="welcome" *ngIf="name">Welcome {{name}}</div>
           <div class="info-user" *ngIf="handPicked">Today you have {{handPicked.length}} events to help people.</div>
       </div>
-<<<<<<< Updated upstream
-      <button class="ui button" (click)="showPopup()" style="float:right;margin-top:5px">Create New Event</button>
-=======
       <div class="button-panel">
         <button class="ui inverted button" (click)="showPopup()" style="float:right;margin-top:5px;width:150px"><i class="add to calendar icon" style="margin-left:5px"></i></button>
         <a class="ui inverted button" href="/profile" style="float:right;margin-top:5px;width:150px"><i class="user circle icon" style="margin-left:5px"></i></a>
       </div>
->>>>>>> Stashed changes
     </div>
   </div>
   <app-events-row [events]="handPicked" title="Hand-picked for you"></app-events-row>
