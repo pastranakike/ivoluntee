@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
   upcoming = [];
   nearby = [];
   orgs: any[] = [];
+  percentage = 0;
+  score = 0;
   quotes: string[] = ['../../../assets/MLKQuote.png',
     './../../assets/VOL1.png',
     './../../assets/VOL2.png',
@@ -67,8 +69,11 @@ export class HomeComponent implements OnInit {
   }
 
   updateInfo() {
+    alert('update infooooooo');
     this.http.getFeed().subscribe((value) => {
       console.log(value);
+      this.percentage = value['my-percentage'];
+      this.score = value['my-score'];
       for (const event of value['events-handpicked']) {
         this.handPicked.push(JSON.parse(event));
       }

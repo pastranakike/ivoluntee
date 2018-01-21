@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { PopupService } from '../popup.service';
 import { HttpService } from '../http.service';
 
@@ -19,6 +19,7 @@ export class CreateEventComponent implements OnInit {
   description = 'Description';
   imageURL: '';
   volunteersNeeded: number;
+  @Output() update: EventEmitter<null> = new EventEmitter();
 
   constructor(private popup: PopupService, private http: HttpService) { }
 
@@ -57,6 +58,7 @@ export class CreateEventComponent implements OnInit {
     this.http.createEvent(event).subscribe((value) => {
       console.log(value);
       this.discard();
+      this.update.emit();
     });
   }
 

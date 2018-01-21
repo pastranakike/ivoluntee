@@ -5,7 +5,7 @@
     <div class="dashboard-box">
       <div class="usertab">
           <div class="welcome" *ngIf="name">Welcome {{name}}</div>
-          <div class="info-user" *ngIf="handPicked">Today you have {{handPicked.length}} events to help people.</div>
+          <div class="info-user" *ngIf="handPicked">Today we have {{handPicked.length}} events catered to you</div>
       </div>
       <div class="button-panel">
         <button class="ui inverted button" (click)="showPopup()" style="float:right;margin-top:5px;width:150px"><i class="add to calendar icon" style="margin-left:5px"></i></button>
@@ -13,9 +13,10 @@
       </div>
     </div>
   </div>
-  <app-events-row [events]="handPicked" title="Hand-picked for you"></app-events-row>
-  <app-organizations-row [orgs]="orgs" title="Featured organizations"></app-organizations-row>
-  <app-events-row [events]="upcoming" title="Upcoming events"></app-events-row>
+  <div style="color:black;margin:30px;font-size:20px;text-align:center">You are currently ranked above {{percentage}} percent of the community. {{percentage > 50 ? 'Keep it up!' : 'I\'m sure you can do better!'}}</div>
+  <app-events-row [events]="handPicked" title="Hand-picked for you" (update)="updateInfo()"></app-events-row>
+  <app-organizations-row [orgs]="orgs" title="Featured organizations" (update)="updateInfo()"></app-organizations-row>
+  <app-events-row [events]="upcoming" title="Upcoming events" (update)="updateInfo()"></app-events-row>
   <app-events-row [events]="nearby" title="Nearby"></app-events-row>
-  <app-create-event></app-create-event>
+  <app-create-event (update)="updateInfo()"></app-create-event>
 </div>

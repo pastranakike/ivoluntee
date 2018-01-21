@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HttpService } from '../../http.service';
 import { AuthService } from '../../auth.service';
 
@@ -12,6 +12,7 @@ export class EventCardComponent implements OnInit {
   @Input() event: any;
   @Input() small = false;
   state = 'nothing';
+  @Output() update: EventEmitter<null> = new EventEmitter();
 
   constructor(private http: HttpService, private auth: AuthService) { }
 
@@ -26,14 +27,18 @@ export class EventCardComponent implements OnInit {
   }
 
   updateInterest() {
-    this.http.updateInterested(this.event._id);
+    this.http.updateInterested(this.event._id).subscribe((value) => {
+      this.update.emit();
+    });
     this.state = 'interested';
     const user = this.auth.getUser();
     this.event.usersInterested.push({userID: user.uid, userName: user.displayName});
   }
 
   updateCheckin() {
-    this.http.updateCheckIn(this.event._id);
+    this.http.updateCheckIn(this.event._id).subscribe((value) => {
+      this.update.emit();
+    });
     this.state = 'attended';
     const user = this.auth.getUser();
     this.event.usersAttended.push({userID: user.uid, userName: user.displayName});

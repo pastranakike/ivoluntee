@@ -11,7 +11,8 @@ export class HttpService {
   private userID: string;
   private userName: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   public httpPost(path: string, body: any): Observable<any> {
     console.log('New post request');
@@ -45,11 +46,7 @@ export class HttpService {
       eventID: eventID,
       userName: this.userName
     };
-    return this.httpPost('users/update_interested/', body).subscribe(
-      (value) => {
-        console.log(value);
-      }
-    );
+    return this.httpPost('users/update_interested/', body);
   }
 
   public updateCheckIn(eventID: string) {
@@ -58,11 +55,7 @@ export class HttpService {
       eventID: eventID,
       userName: this.userName
     };
-    return this.httpPost('events/checkin/', body).subscribe(
-      (value) => {
-        console.log(value);
-      }
-    );
+    return this.httpPost('events/checkin/', body);
   }
 
   public updateTags(tags: any[]) {
