@@ -110,6 +110,9 @@ export class HttpService {
 
   createEvent(event) {
     console.log(event);
+    event.creatorID = this.userID;
+    event.creatorName = this.userName;
+    return this.httpPost('events/create_event', event);
   }
 
 }

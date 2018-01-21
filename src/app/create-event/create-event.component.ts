@@ -11,11 +11,11 @@ export class CreateEventComponent implements OnInit {
   show = false;
   latitude = 29.6475473;
   longitude = -82.3436095;
-  time = 0;
+  time = '17:30';
   name = '';
   tags = '';
-  date = new Date();
-  duration: number;
+  date = '01-21-2018';
+  duration = 60;
   description = '';
 
   constructor(private popup: PopupService, private http: HttpService) { }
@@ -28,6 +28,12 @@ export class CreateEventComponent implements OnInit {
 
   discard() {
     this.popup.setPopupVisibility(false);
+    this.time = '17:30';
+    this.name = '';
+    this.tags = '';
+    this.date = '01-21-2018';
+    this.duration = 60;
+    this.description = '';
   }
 
   sendEvent() {
@@ -36,14 +42,18 @@ export class CreateEventComponent implements OnInit {
       longitude: this.latitude,
       time: this.duration * 60000,
       name: this.name,
-      tags: this.tags.split(','),
-      timestamp: new Date(this.date).getDate(),
+      tags: this.tags === '' ? [] : this.tags.split(','),
+      timestamp: new Date(this.date + ' ' + this.time).getTime(),
       usersAttended: [],
       usersInterested: [],
       description: this.description
     };
 
-    this.http.createEvent(event);
+    console.log(this.time);
+    this.http.createEvent(event).subscribe((value) => {
+      console.log(value);
+      this.discard();
+    });
   }
 
 }
